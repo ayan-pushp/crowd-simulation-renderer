@@ -50,7 +50,6 @@ export function updateTriangleColors() {
             continue;
         }
         const d = t.peopleCount;
-        // **IMPROVEMENT:** Using brighter, more distinct colors.
         if (d === config.PEOPLE_PER_TRI) {
             t.color = [0.1, 1.0, 0.1]; // Bright Green
         } else if (d > config.PEOPLE_PER_TRI) {

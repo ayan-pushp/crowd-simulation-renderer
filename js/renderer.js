@@ -4,7 +4,6 @@ import { state, obstacleCorners } from './simulation.js';
 import { toClip } from './utils.js';
 
 // --- CONTEXT CREATION ---
-// Create contexts once and export them to be used by other modules.
 export const ctx = overlay.getContext('2d');
 export const gl = glCanvas.getContext('webgl', { antialias: true });
 
@@ -31,9 +30,7 @@ function createProgram(vs, fs) {
 }
 
 export function initRenderer() {
-    // **FIX:** Hide the WebGL canvas. It's causing a layout issue where it appears
-    // as a blank space at the top of the page. The 2D overlay canvas is now
-    // responsible for rendering the entire scene, so the WebGL canvas can be hidden.
+   
     glCanvas.style.display = 'none';
 
     if (!gl) {
@@ -62,7 +59,7 @@ function drawOverlay(uiState) {
         if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
     });
     ctx.closePath();
-    ctx.fillStyle = 'rgba(100, 100, 100, 0.95)'; // Dark grey
+    ctx.fillStyle = 'rgba(100, 100, 100, 0.95)';
     ctx.fill();
     ctx.strokeStyle = '#333';
     ctx.lineWidth = 2.5;

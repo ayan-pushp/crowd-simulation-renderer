@@ -2,25 +2,28 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title>Crowd Simulator — WebGL (drag people)</title>
-  <!-- Corrected the stylesheet name from styles.css to style.css -->
+  <title>Crowd Simulator</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- Added a main wrapper to center everything -->
   <div class="main-container">
     <div id="ui">
-      <button id="regen">Regenerate</button>
-      <button id="centerObs">Center Obstacle</button>
-      <label><input id="togglePts" type="checkbox" /> Show points</label>
-      <span id="diag">tri: 0 (valid 0) pts: 0 ppl: 0</span>
-      <br>
-      <small><strong>Controls:</strong></small>
-      <small>Click obstacle to select. Drag = move. Hold Shift + drag = rotate (smooth). Wheel = scale. Click people to drag them. Keys: R = rotate 15°, +/- scale, C = toggle show edges</small>
+      <h1>Crowd Simulator 2D</h1>
+      <div>
+        <button id="regen">Regenerate Scene</button>
+        <button id="centerObs">Center Obstacle</button>
+      <!-- <label><input id="togglePts" type="checkbox" /> Show points</label> -->
+      <!-- <span id="diag">tri: 0 (valid 0) pts: 0 ppl: 0</span> -->
+      <small><b>Click + Drag:</b> Move objects, 
+        <b>Shift + Drag :</b> Smooth Rotate, 
+        <b>Wheel :</b> Scale,  
+        <b>R :</b> Rotate 15°,
+        <b>+/- :</b> Scale</b></small> 
+      </div>
+      
     </div>
 
-    <!-- Added a container specifically for the canvases -->
     <div id="canvas-container">
       <canvas id="glcanvas"></canvas>
       <canvas id="overlay"></canvas>

@@ -1,4 +1,3 @@
-// js/shaders.js
 
 export const triVS = `
   attribute vec2 a_pos;

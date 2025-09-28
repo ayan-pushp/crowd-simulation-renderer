@@ -1,52 +1,61 @@
-Crowd Simulator using WebGL
-This project is a web-based crowd simulator that uses WebGL and 2D Canvas to visualize spatial partitioning. The simulation renders a dynamic triangulation of a 2D space containing an interactive obstacle and a crowd of people, represented as black points. The color of each triangle changes based on its population density.
-Features
-Dynamic Triangulation: The 2D space is partitioned into triangles using the Delaunator library. The mesh is automatically and instantly rebuilt when the layout changes.
-Interactive Obstacle: Users can move, rotate, and scale a central obstacle using mouse and keyboard controls.
-Interactive People: Individual "people" (dots) can be dragged and dropped from one triangle to another.
-Population Density Visualization: Triangles are colored green (optimal density), red (overpopulated), or blue (underpopulated) based on the number of people they contain.
-Modular Codebase: The JavaScript is structured into ES6 modules for better organization and maintainability, separating concerns like rendering, simulation logic, and UI control.
-Prerequisites
-You will need a modern web browser that supports WebGL and ES6 modules (e.g., Chrome, Firefox, Safari, Edge).
-Installation and Setup
-Because this project uses ES6 modules (import/export), it must be run from a local web server to avoid browser security restrictions (CORS errors). You cannot simply open the index.html file directly from your file system.
-Here is the recommended way to run the application:
-Download the Project: Ensure you have all the project files in a single folder with the following structure: crowd-simulator/
-├── index.html
-├── css/
-│   └── style.css
-└── js/
-    ├── main.js
-    ├── config.js
-    ├── renderer.js
-    ├── shaders.js
-    ├── simulation.js
-    └── utils.js
+# Interactive Crowd Simulator using WebGL
 
 
-Start a Local Web Server: Open your terminal or command prompt, navigate into the main crowd-simulator/directory, and run one of the following commands:
-If you have Python 3: python -m http.server
+This project is a web-based crowd simulator that uses WebGL and 2D Canvas to visualize spatial partitioning. The simulation renders a dynamic triangulation of a 2D space containing an interactive obstacle and a crowd of people, represented as black points, whose density is visualized with color-coded triangles. The application is built with modern HTML5, CSS3, and JavaScript (ES6 Modules).
 
 
-If you have Python 2: python -m SimpleHTTPServer
+## Features
 
+* **Interactive Obstacle:** Users can move, rotate, and scale the central obstacle using mouse and keyboard controls.
+* **Dynamic Re-triangulation:** The 2D space is partitioned into triangles using the Delaunator library. The mesh is automatically and instantly rebuilt in real-time whenever the obstacle is manipulated or when the layout changes.
+* **Population Density Visualization:** Triangles are colored red (overpopulated), green (optimal density), or blue (underpopulated) based on the number of "people" they contain.
+* **Interactive Crowd:** Individual people (represented by black dots) can be dragged and dropped from one triangle to another, with colors updating instantly.
+* **Modern & Responsive UI:** The user interface is clean, centered, and designed to work well on various screen sizes.
+* **Modular Codebase:** The JavaScript is structured into ES6 modules for better organization and maintainability, separating concerns like rendering, simulation logic, and UI control.
 
-If you have Node.js and serve installed (npm install -g serve): serve .
+## How to Run the Application
 
+**Instructions:**
 
-Open the Application: Once the server is running, open your web browser and navigate to the following address:http://localhost:8000
-The crowd simulator application should now be running.
-Usage and Controls
-Move Obstacle: Click and drag the central grey obstacle.
-Rotate Obstacle: Hold down Shift while clicking and dragging the obstacle.
-Scale Obstacle: Use the mouse wheel while hovering over the obstacle.
-Move a Person: Click and drag any of the black dots.
-Keyboard Controls:
-R: Rotate the obstacle by 15 degrees.
-+ / -: Scale the obstacle up or down.
-C: Toggle the visibility of the triangle edges.
-UI Buttons:
-Regenerate: Creates a new random layout of points and people.
-Retriangulate: Manually forces the mesh to be rebuilt.
-Center Obstacle: Resets the obstacle to the center of the canvas.
-Show points: Toggles the visibility of the triangulation vertices.
+1.  **Prerequisites:** Because this project uses ES6 modules (import/export), it must be run from a local web server to avoid browser security restrictions (CORS errors). You cannot simply open the index.html file directly from your file system.To run the application correctly, you must serve the files from a local web server. The easiest way to do this is with the **Live Server** extension in Visual Studio Code.
+    * [Visual Studio Code](https://code.visualstudio.com/) installed.
+    * The [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extension installed from the VS Code Marketplace.
+2.  **Open the Project:** Ensure you have all the project files in a single folder with the following structure:
+
+```
+     crowd-simulation-renderer/
+    ├── index.html
+    ├── styles.css
+    └── js/
+        ├── main.js
+        ├── config.js
+        ├── renderer.js
+        ├── shaders.js
+        ├── simulation.js
+        └── utils.js
+```
+3.  **Start the Server:** In the bottom-right corner of the VS Code window, click the **"Go Live"** button.
+    
+4.  **View in Browser:** Your default web browser will automatically open with the application running, usually at an address like `http://127.0.0.1:5500`.
+
+The application should now be running correctly.
+
+## User Controls
+
+### Mouse Controls:
+
+* **Move Obstacle:** Click and drag the central obstacle.
+* **Rotate Obstacle:** Hold down the `Shift` key while clicking and dragging the obstacle.
+* **Scale Obstacle:** Use the mouse wheel while hovering over the simulation area.
+* **Move a Person:** Click and drag any of the black dots.
+
+### Keyboard Controls:
+
+* **R Key:** Rotate the obstacle by 15 degrees.
+* **+/- Keys:** Scale the obstacle up or down.
+
+### UI Buttons:
+* **Regenerate:** Creates a new random layout of points and people.
+* **Center Obstacle:** Resets the obstacle to the center of the canvas.
+* **Show points:** Toggles the visibility of the triangulation vertices.
+

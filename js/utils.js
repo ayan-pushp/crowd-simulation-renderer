@@ -1,4 +1,3 @@
-// js/utils.js
 
 export function toClip(x, y) {
   return { x: x * 2 - 1, y: 1 - y * 2 };
@@ -32,7 +31,6 @@ export function pointInTriangle(p, a, b, c) {
   const invDen = 1 / (dot00 * dot11 - dot01 * dot01 + 1e-12);
   const u = (dot11 * dot02 - dot01 * dot12) * invDen;
   const v = (dot00 * dot12 - dot01 * dot02) * invDen;
-  // **FIX:** Add a small epsilon to the check to correctly handle points on the edges.
   const epsilon = 1e-7;
   return (u >= -epsilon) && (v >= -epsilon) && (u + v < 1 + epsilon);
 }

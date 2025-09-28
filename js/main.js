@@ -157,19 +157,16 @@ function initialize() {
         sim.generatePeople();
         drawAll(uiState);
     });
-    // document.getElementById('retri').addEventListener('click', () => {
-    //     sim.buildTriangulation();
-    //     drawAll(uiState);
-    // });
+
     document.getElementById('centerObs').addEventListener('click', () => {
         obstacle.cx = 0.5; obstacle.cy = 0.5;
         sim.buildTriangulation();
         drawAll(uiState);
     });
-    document.getElementById('togglePts').addEventListener('change', (e) => {
-        uiState.showPoints = e.target.checked;
-        drawAll(uiState);
-    });
+    // document.getElementById('togglePts').addEventListener('change', (e) => {
+    //     uiState.showPoints = e.target.checked;
+    //     drawAll(uiState);
+    // });
 
     // Initial simulation setup
     initRenderer();

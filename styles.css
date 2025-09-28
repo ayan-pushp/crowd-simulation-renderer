@@ -9,8 +9,10 @@ body {
   min-height: 100vh;
 }
 
-/* Top control panel */
 #ui { 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   width: 90%;
   max-width: 1000px;
   margin: 20px auto;
@@ -19,7 +21,7 @@ body {
   border-radius: 10px; 
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
   z-index: 10; 
-  position: relative;
+  text-align: center;
 }
 
 button { 
@@ -61,7 +63,6 @@ small {
   line-height: 1.4;
 }
 
-/* Rendering area */
 canvas { 
   display: block; 
   margin: 20px auto;
@@ -74,7 +75,6 @@ canvas {
   position: relative;
 }
 
-/* Make overlay stay aligned with main canvas */
 #overlay { 
   pointer-events: auto; 
   z-index: 3; 
