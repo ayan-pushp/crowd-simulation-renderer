@@ -1,0 +1,85 @@
+body { 
+  margin: 0; 
+  font-family: "Segoe UI", Arial, sans-serif; 
+  background: #f7f9fc; 
+  color: #222;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Top control panel */
+#ui { 
+  width: 90%;
+  max-width: 1000px;
+  margin: 20px auto;
+  background: #ffffff; 
+  padding: 15px 20px; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
+  z-index: 10; 
+  position: relative;
+}
+
+button { 
+  margin: 6px 10px 6px 0; 
+  padding: 8px 14px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  background: #4a90e2;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button:hover { 
+  background: #357ab8;
+}
+
+label { 
+  font-size: 14px; 
+  margin-right: 10px; 
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+#diag { 
+  font-size: 13px; 
+  color: #444; 
+  margin-left: 10px; 
+}
+
+small { 
+  display: block; 
+  margin-top: 6px;
+  color: #666; 
+  font-size: 12px; 
+  line-height: 1.4;
+}
+
+/* Rendering area */
+canvas { 
+  display: block; 
+  margin: 20px auto;
+  max-width: 1000px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+/* Make overlay stay aligned with main canvas */
+#overlay { 
+  pointer-events: auto; 
+  z-index: 3; 
+}
+
+#glcanvas { 
+  z-index: 1; 
+}

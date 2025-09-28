@@ -1,1 +1,0 @@
-Crowd Simulation Renderer
